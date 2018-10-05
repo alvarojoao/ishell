@@ -6,6 +6,10 @@ import traceback
 from builtins import input
 from ishell import logger
 
+MESSAGE = '''
+    ********* WELCOME TO *********
+    ********* ISHELL *************
+'''
 
 class Console(object):
     def __init__(self, prompt="Prompt", prompt_delim=">"):
@@ -86,6 +90,7 @@ class Console(object):
         else:
             previous_prompt = ishell._current_prompt
         ishell._current_prompt = prompt
+        sys.stdout.write(MESSAGE)
         while 1:
             try:
                 sys.stdout.write("\r")
